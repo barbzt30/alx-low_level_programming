@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: A program that prints the alphabet in lowercase
+ * Description: A program that prints the alphabet in lowercase leaving e & q
  *
  * Return: Always 0 (Success)
  */
