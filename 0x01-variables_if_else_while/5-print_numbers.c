@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-/***
+/**
  * main - Entry point
  *
+ *Description: A program that prints single numbers
+
  * Return: Always 0 (Success)
  */
 
