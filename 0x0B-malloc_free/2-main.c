@@ -15,7 +15,10 @@ int main(void)
 
 	if (s == NULL)
 	{
-		printf("failed\n", s);
-		free(s);
-		return (0);
+		printf("failed\n");
+		return (1);
 	}
+	printf("%s\n", s);
+	free(s);
+	return (0);
+}
