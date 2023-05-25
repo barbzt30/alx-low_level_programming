@@ -1,11 +1,11 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - prints strings passed to function separated by separators
+ * print_strings - prints strings passed to function separed by separators
  * @separator: a string to separate strings
  * @n: number of unnamed parameters
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -13,9 +13,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list ap;
 
-	va_star(ap, n);
+	va_start(ap, n);
 	if (separator == NULL)
-		separator = "';
+		separator = "";
 
 	for (i = 0; i < n; i++)
 	{
@@ -23,9 +23,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		str = va_arg(ap, char*);
 		if (str == NULL)
 			str = "(nil)";
-		printf("%s" , str);
+		printf("%s", str);
 		if (i < n - 1)
-			printf("%s" , separator);
+			printf("%s", separator);
 	}
 	printf("\n");
 	va_end(ap);
