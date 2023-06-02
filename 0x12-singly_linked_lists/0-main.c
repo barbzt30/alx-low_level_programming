@@ -21,7 +21,7 @@ int main(void)
 	{printf("Error\n");
 		return (1);
 	}
-	nwe->str = strdup("Hello");
+	new->str = strdup("Hello");
 	new->len = 5;
 	new->next = head;
 	head = new;
