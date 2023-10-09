@@ -4,49 +4,45 @@
 /**
  * string_nconcat - Entry point
  * Description - 'a function that concatenates two strings with'
- * @s1: char string type
- * @s2: char string type
- * @n: number of bytes
- * Return: pointer to allocated memory
+ * @s1: first char
+ * @s2: second char
+ * @n: unsigned integer
+ *
+ * Return: if the function fails, it should return NULL.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int length1 = 0, length2 = 0, i;
-	char *ptr;
+	unsigned int x, y, z;
+	char *s;
 
-	if (s1 == 0)
+	if (s1 == NULL)
 	{
-		s1 = "";
+		x = 0;
 	}
-	if (s2 == 0)
+	else
 	{
-		s2 = "";
+		for (x = 0; s1[x]; ++x)
+			;
 	}
+	if (s2 == NULL)
+	{
+		y = 0;
+	}
+	else
+	{
+		for (y = 0; s2[y]; ++y)
+			;
+	}
+	if (y > n)
+		y = n;
+	s = malloc(sizeof(char) * (x + y + 1));
 
-	while (s1[length1] != '\0')
-	{
-		length1++;
-	}
-	while (s2[length2] != '\0')
-	{
-		length2++;
-	}
-
-	if (n >= length2)
-		n = length2;
-	ptr = (char *)malloc((length1 + n + 1) * sizeof(char));
-
-	if (ptr == 0)
-		return (0);
-}
-	for (i = 0; i < length1; i++)
-	{
-		ptr[i] = s1[i];
-	}
-	for (; i < (length1 + n); i++)
-	{
-		ptr[i] = s2[i - length1];
-	}
-	ptr[i] =  '\0';
-	return (ptr);
+	if (s == NULL)
+		return (NULL);
+	for (z = 0; z < x; z++)
+		s[z] = s1[z];
+	for (z = 0; z < y; z++)
+		s[z + x] = s2[z];
+	s[x + y] = '\0';
+	return (s);
 }
