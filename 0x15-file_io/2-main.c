@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * main - check the code
@@ -16,6 +17,6 @@ int main(int ac, char **av)
 		exit(1);
 	}
 	res = append_text_to_file(av[1], av[2]);
-	printf("-> %I)\n", res);
+	printf("-> %i)\n", res);
 	return (0);
 }

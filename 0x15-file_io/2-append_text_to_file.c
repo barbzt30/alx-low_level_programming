@@ -8,7 +8,7 @@
  * Return: -1 if the function fails or filename is NULL, if the file
  * does not exist, the user lacks write permissions -1, and 1 if otherwise
  */
-int append_text_to_file(const char *filename, char **text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int op, w, len = 0;
 
@@ -20,7 +20,7 @@ int append_text_to_file(const char *filename, char **text_content)
 		for (len = 0; text_content[len];)
 			len++;
 	}
-	op = open(filename, 0_WRONLY | O_APPEND);
+	op = open(filename, O_WRONLY | O_APPEND);
 	w = write(op, text_content, len);
 
 	if (op == -1 || w == -1)
